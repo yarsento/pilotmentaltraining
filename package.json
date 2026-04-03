@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://yarsento.github.io/pilotmentaltraining",
+  "homepage": "https://yarsento.github.io/pilotmentaltraining/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
