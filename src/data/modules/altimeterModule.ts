@@ -5,6 +5,7 @@ export const altimeterModule: TrainingModule = {
   id: "altimeter-pressure",
   name: "Altimeter & Pressure",
   description: "QNH, pressure altitude, and density altitude",
+  longDescription: "Practice calculating pressure altitude and density altitude based on field elevation, QNH, and outside air temperature (OAT). Understanding how to work with altimeter settings and how they affect altitude readings is crucial for safe flight operations, especially when flying at different elevations and in varying weather conditions.",
   icon: "Gauge",
   generateQuestion(difficulty: Difficulty) {
     if (difficulty === "easy") {
