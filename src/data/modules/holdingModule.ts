@@ -5,6 +5,7 @@ export const holdingModule: TrainingModule = {
   id: "holding",
   name: "Holding Time Correction",
   description: "Calculate outbound leg time correction in a hold",
+  longDescription: "In a standard holding pattern, the outbound leg time is typically 1 minute at or below 14,000 ft, and 1.5 minutes above. However, when there is wind, the outbound leg time needs to be adjusted to maintain the desired holding pattern shape. The correction depends on the wind angle and speed relative to the inbound leg.\n\nThe general rule of thumb for time correction is:\n- If the wind is mostly headwind or tailwind (within 30° of inbound), apply the full correction based on the long wind component.\n- If the wind is at a moderate angle (30° to 60°), apply half the correction.\n- If the wind is mostly crosswind (greater than 60°), no correction is needed.\n\nThe long wind component can be calculated as: Long component = (110 - closestAngle) % of wind speed, where closestAngle is the smallest angle between the wind direction and the inbound course, normalized to 0-180°.",
   icon: "RotateCcw",
   generateQuestion(difficulty: Difficulty) {
     const inboundCourse =

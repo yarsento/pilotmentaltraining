@@ -5,6 +5,7 @@ export const tasModule: TrainingModule = {
   id: "tas",
   name: "True Airspeed",
   description: "Calculate TAS from IAS and altitude",
+  longDescription: "Calculate True Airspeed (TAS) from Indicated Airspeed (IAS) and altitude using the rule of thumb that TAS increases by approximately 2% for every 1000 feet of altitude. This is a fundamental concept for understanding aircraft performance and navigation at different altitudes.",
   icon: "Plane",
   generateQuestion(difficulty: Difficulty) {
     const ias =

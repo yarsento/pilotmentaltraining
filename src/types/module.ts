@@ -14,6 +14,7 @@ export interface TrainingModule {
   id: string;
   name: string;
   description: string;
+  longDescription?: string;
   icon: string; // Lucide icon name
   generateQuestion: (difficulty: Difficulty) => Question;
 }

@@ -5,6 +5,7 @@ export const wcaModule: TrainingModule = {
   id: "wca",
   name: "Wind Correction Angle",
   description: "Calculate WCA from wind, course, and TAS",
+  longDescription: "Given a course, wind direction/speed, and true airspeed, calculate the Wind Correction Angle (WCA) to maintain the desired track. This is a fundamental skill for accurate navigation in crosswind conditions.\nThe WCA can be calculated using the formula:\nWCA = (wind angle * wind velocity) / TAS.\nThis only applies to a maximum wind angle of 60°. For angles greater than 60°, 60° is used in the formula to give a maximum WCA.",
   icon: "Navigation",
   generateQuestion(difficulty: Difficulty) {
     const course =

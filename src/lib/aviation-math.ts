@@ -34,7 +34,9 @@ export function calcCrossComponent(windSpeed: number, angle: number): number {
 
 /** Wind Correction Angle: (windAngle * windVelocity) / TAS */
 export function calcWCA(angle: number, windVelocity: number, tas: number): number {
-  return Math.round((angle * windVelocity) / tas);
+  const closest = closestAngle(angle);
+  const effectiveAngle = Math.min(closest, 60); // Cap at 60° for WCA calculation
+  return Math.round((effectiveAngle * windVelocity) / tas);
 }
 
 /** True Airspeed: IAS + IAS * 2% per 1000ft */

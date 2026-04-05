@@ -5,6 +5,7 @@ export const windComponentModule: TrainingModule = {
   id: "wind-components",
   name: "Long & Cross Wind",
   description: "Calculate headwind/tailwind and crosswind components",
+  longDescription: "Given a runway heading and wind direction/speed, calculate the headwind/tailwind and crosswind components. This is essential for safe takeoff and landing performance calculations.\nUse the following rule of thumbs:\nLong wind component = (110 - wind angle) % of wind speed\nCross wind component = (20 + wind angle) % of wind speed\nWhere wind angle is the absolute difference between runway heading and wind direction, normalized to 0-180°.",
   icon: "Wind",
   generateQuestion(difficulty: Difficulty) {
     const rwyChoices = difficulty === "easy"

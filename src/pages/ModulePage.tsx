@@ -38,7 +38,7 @@ export default function ModulePage() {
       </header>
 
       <main className="mx-auto max-w-2xl px-4 py-8 space-y-8">
-        <p className="text-muted-foreground">{module.description}</p>
+        <p className="text-muted-foreground whitespace-pre-line">{module.longDescription ?? module.description}</p>
 
         <div className="space-y-4">
           <h2 className="text-sm font-medium text-foreground">Select Difficulty</h2>
