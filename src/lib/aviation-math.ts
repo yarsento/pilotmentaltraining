@@ -5,14 +5,21 @@ export function windAngle(windDir: number, reference: number): number {
   return diff;
 }
 
+export function closestAngle(angle: number): number {
+  const mod = angle % 180; // Normalize to [0, 180)
+  return mod <= 90 ? mod : 180 - mod; 
+}
+
 /** Long wind component percentage: (110 - windAngle)% — clamped 0-100 */
 export function longWindPercent(angle: number): number {
-  return Math.max(0, Math.min(100, 110 - angle));
+  const closest = closestAngle(angle);
+  return Math.max(0, Math.min(100, 110 - closest));
 }
 
 /** Cross wind component percentage: (20 + windAngle)% — clamped 0-100 */
 export function crossWindPercent(angle: number): number {
-  return Math.max(0, Math.min(100, 20 + angle));
+  const closest = closestAngle(angle);
+  return Math.max(0, Math.min(100, 20 + closest));
 }
 
 /** Long wind component in knots */

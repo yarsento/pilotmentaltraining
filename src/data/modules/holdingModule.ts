@@ -1,5 +1,5 @@
 import type { TrainingModule, Difficulty } from "@/types/module";
-import { windAngle, calcLongComponent, randInt, uid, randChoice } from "@/lib/aviation-math";
+import { windAngle, calcLongComponent, randInt, uid, randChoice, closestAngle } from "@/lib/aviation-math";
 
 export const holdingModule: TrainingModule = {
   id: "holding",
@@ -21,13 +21,14 @@ export const holdingModule: TrainingModule = {
 
     // Wind angle relative to inbound leg
     const angle = windAngle(windDir, inboundCourse);
+    const closest = closestAngle(angle);
     const longComp = calcLongComponent(windSpd, angle);
 
     // Time correction based on wind angle
     let correction: number;
-    if (angle <= 30) {
+    if (closest <= 30) {
       correction = longComp; // full seconds
-    } else if (angle <= 60) {
+    } else if (closest <= 60) {
       correction = Math.round(longComp / 2); // half seconds
     } else {
       correction = 0;
