@@ -5,6 +5,7 @@ export const weightBalanceModule: TrainingModule = {
   id: "weight-balance",
   name: "Weight & Balance",
   description: "Total weight, CG position, and moment calculations",
+  longDescription: "Calculate total weight, center of gravity (CG) position, and moments based on the weights and arms of various items in the aircraft. This module helps you understand how to ensure your aircraft is within safe weight and balance limits for flight.",
   icon: "Scale",
   generateQuestion(difficulty: Difficulty) {
     if (difficulty === "easy") {

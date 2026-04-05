@@ -5,6 +5,7 @@ export const headingModule: TrainingModule = {
   id: "heading",
   name: "Heading Calculations",
   description: "Reciprocal headings, relative bearings, and compass math",
+  longDescription: "Practice calculating reciprocal headings, relative bearings, and performing basic compass math. This module helps you understand how to work with headings and bearings, which is essential for navigation and situational awareness in flight.",
   icon: "Compass",
   generateQuestion(difficulty: Difficulty) {
     if (difficulty === "easy") {
@@ -31,9 +32,10 @@ export const headingModule: TrainingModule = {
     }
     // hard: relative bearing to heading
     const hdg = randInt(1, 360);
-    const bearing = randInt(10, 350);
+    const bearing = randInt(10, 350) * (Math.random() > 0.5 ? 1 : -1); // relative bearing between -350 and +350
     let result = hdg + bearing;
     if (result > 360) result -= 360;
+    else if(result <= 0) result += 360;
     return {
       id: uid(),
       prompt: `Your heading is ${hdg}°. A target is at relative bearing ${bearing}°. What is the true bearing to the target?`,

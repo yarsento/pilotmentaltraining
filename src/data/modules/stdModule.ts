@@ -5,6 +5,7 @@ export const stdModule: TrainingModule = {
   id: "speed-time-distance",
   name: "Speed / Time / Distance",
   description: "Groundspeed, ETA, and fuel burn calculations",
+  longDescription: "Practice calculating time to destination, distance covered, and fuel burn based on groundspeed, time, and fuel flow. These are essential skills for flight planning and in-flight decision making to ensure you reach your destination safely and efficiently.",
   icon: "Clock",
   generateQuestion(difficulty: Difficulty) {
     if (difficulty === "easy") {
